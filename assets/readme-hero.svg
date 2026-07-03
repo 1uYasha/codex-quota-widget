@@ -50,7 +50,7 @@
     </g>
     <g transform="translate(0 270)" fill="#CBD5E1" font-size="20">
       <text x="0" y="0">• 使用当前安装的 Codex 本机接口读取额度</text>
-      <text x="0" y="42">• 不再读取 Downloads 里的 repack 旧版本</text>
+      <text x="0" y="42">• 自动定位当前本机 Codex 安装目录</text>
       <text x="0" y="84">• 构建产物、缓存、Token 与本机日志默认不入库</text>
     </g>
   </g>

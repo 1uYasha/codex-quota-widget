@@ -57,7 +57,7 @@ The widget prefers the current local Codex installation:
 %LOCALAPPDATA%\OpenAI\Codex\bin\<version-hash>\codex.exe
 ```
 
-It does not read quota data from `Downloads\codex-msix-repack`, which avoids stale repacked Codex builds returning a different quota snapshot from the currently installed client.
+The widget uses the current local Codex installation to read quota data.
 
 ## Privacy and Security
 

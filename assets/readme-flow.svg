@@ -10,7 +10,7 @@
       <text x="52" y="61" text-anchor="middle" fill="#FFFFFF" font-size="25" font-weight="800">1</text>
       <text x="92" y="48" fill="#0F172A" font-size="22" font-weight="700">定位 Codex</text>
       <text x="28" y="94" fill="#475569" font-size="16">优先使用当前安装目录</text>
-      <text x="28" y="120" fill="#475569" font-size="16">过滤 repack 旧路径</text>
+      <text x="28" y="120" fill="#475569" font-size="16">使用当前本机安装路径</text>
     </g>
     <path d="M334 269H414" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
     <path d="M402 255L418 269L402 283" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
