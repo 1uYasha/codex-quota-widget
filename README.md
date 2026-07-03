@@ -90,8 +90,6 @@ Codex Quota Widget 是一个轻量级桌面工具，用来快速查看本机 Cod
 %LOCALAPPDATA%\OpenAI\Codex\bin\<version-hash>\codex.exe
 ```
 
-额度数据。
-
 ## 隐私与安全
 
 这个项目的安全边界很明确：
