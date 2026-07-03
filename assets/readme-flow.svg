@@ -1,0 +1,41 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="520" rx="28" fill="#F8FAFC"/>
+  <rect x="38" y="38" width="1124" height="444" rx="24" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="78" y="94" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">本机读取流程</text>
+  <text x="78" y="130" fill="#64748B" font-family="Segoe UI, Arial, sans-serif" font-size="18">只读取额度快照和本地用量日志，不读取认证 Token，不上传个人数据。</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <g transform="translate(86 198)">
+      <rect width="228" height="142" rx="20" fill="#ECFEFF" stroke="#67E8F9"/>
+      <circle cx="52" cy="52" r="24" fill="#06B6D4"/>
+      <text x="52" y="61" text-anchor="middle" fill="#FFFFFF" font-size="25" font-weight="800">1</text>
+      <text x="92" y="48" fill="#0F172A" font-size="22" font-weight="700">定位 Codex</text>
+      <text x="28" y="94" fill="#475569" font-size="16">优先使用当前安装目录</text>
+      <text x="28" y="120" fill="#475569" font-size="16">过滤 repack 旧路径</text>
+    </g>
+    <path d="M334 269H414" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M402 255L418 269L402 283" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(434 198)">
+      <rect width="228" height="142" rx="20" fill="#F0FDF4" stroke="#86EFAC"/>
+      <circle cx="52" cy="52" r="24" fill="#22C55E"/>
+      <text x="52" y="61" text-anchor="middle" fill="#FFFFFF" font-size="25" font-weight="800">2</text>
+      <text x="92" y="48" fill="#0F172A" font-size="22" font-weight="700">读取额度</text>
+      <text x="28" y="94" fill="#475569" font-size="16">调用 app-server 接口</text>
+      <text x="28" y="120" fill="#475569" font-size="16">转换为剩余百分比</text>
+    </g>
+    <path d="M682 269H762" stroke="#94A3B8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M750 255L766 269L750 283" stroke="#94A3B8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(782 198)">
+      <rect width="228" height="142" rx="20" fill="#EEF2FF" stroke="#A5B4FC"/>
+      <circle cx="52" cy="52" r="24" fill="#6366F1"/>
+      <text x="52" y="61" text-anchor="middle" fill="#FFFFFF" font-size="25" font-weight="800">3</text>
+      <text x="92" y="48" fill="#0F172A" font-size="22" font-weight="700">桌面展示</text>
+      <text x="28" y="94" fill="#475569" font-size="16">悬浮窗和托盘常驻</text>
+      <text x="28" y="120" fill="#475569" font-size="16">状态颜色实时反馈</text>
+    </g>
+  </g>
+  <g transform="translate(86 386)" font-family="Segoe UI, Arial, sans-serif">
+    <rect width="1028" height="54" rx="16" fill="#0F172A"/>
+    <text x="26" y="35" fill="#D1FAE5" font-size="18" font-weight="700">安全边界：</text>
+    <text x="122" y="35" fill="#E2E8F0" font-size="18">.env、.codex、dist、node_modules、日志、缓存、本机凭据文件均不提交到 GitHub。</text>
+  </g>
+</svg>

@@ -1,0 +1,185 @@
+# Codex Quota Widget
+
+<p align="center">
+  <img src="assets/readme-hero.svg" alt="Codex Quota Widget 产品预览" width="880" />
+</p>
+
+<p align="center">
+  <strong>一个面向 Windows 的 Codex 剩余额度桌面小组件。</strong><br />
+  用悬浮窗口、状态灯和液态仪表盘，把 5 小时窗口、7 天窗口、今日 Token 用量放在桌面一角。
+</p>
+
+<p align="center">
+  <a href="#核心功能">核心功能</a> ·
+  <a href="#隐私与安全">隐私与安全</a> ·
+  <a href="#本地开发">本地开发</a> ·
+  <a href="#常见问题">常见问题</a>
+</p>
+
+<p align="center">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows-2563eb?style=for-the-badge" />
+  <img alt="Electron" src="https://img.shields.io/badge/Electron-43-111827?style=for-the-badge" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge" />
+</p>
+
+---
+
+## 项目定位
+
+Codex Quota Widget 是一个轻量级桌面工具，用来快速查看本机 Codex 账号的使用额度状态。它不要求你手动输入 Token，也不会上传额度数据；它通过本机已安装的 Codex 程序读取官方客户端可访问的额度快照，并把信息整理成一个紧凑的悬浮窗。
+
+这个项目参考了 `xicunwus2025-sys/codex-led-widget` 的小组件方向，但做了重新整理：仓库名称、README 表达、视觉素材、路径解析逻辑和隐私说明都重新设计，避免直接复用原项目素材和文案。
+
+## 界面预览
+
+<p align="center">
+  <img src="assets/readme-flow.svg" alt="Codex Quota Widget 数据流程与界面说明" width="880" />
+</p>
+
+小组件默认放在屏幕右上角，窗口无边框、透明背景、体积较小，不会挡住主要开发区域。颜色会跟随额度状态变化：
+
+| 状态 | 颜色 | 说明 |
+| --- | --- | --- |
+| 正常 | 绿色 | 5 小时窗口剩余额度充足 |
+| 偏低 | 黄色 | 剩余额度低于 10%，建议留意 |
+| 用尽 | 红色 | 当前窗口额度为 0 |
+| 读取中 | 蓝色 | 正在从本机 Codex 读取快照 |
+| 失败 | 红色 | 本机 Codex 路径、登录态或读取过程异常 |
+
+## 核心功能
+
+### 1. 额度一眼可见
+
+- 显示 5 小时窗口剩余百分比。
+- 显示 7 天窗口剩余百分比和重置时间。
+- 显示当前计划类型，例如 `PLUS`。
+- 使用 LED 状态点区分正常、偏低、用尽和读取失败。
+
+### 2. 今日 Token 统计
+
+- 从本机 `.codex/sessions` 会话日志中统计当天 Token 使用量。
+- 展示总 Token 数，并在悬停时提供输入、输出、事件数量等细节。
+- 只读取本地会话日志，不读取认证 Token。
+
+### 3. 桌面悬浮体验
+
+- 无边框透明窗口，适合放在屏幕角落。
+- 支持置顶和取消置顶。
+- 支持隐藏到托盘，点击托盘图标可再次显示。
+- 支持开机自启动。
+- 支持刷新间隔选择：1、5、15、30、60 分钟。
+
+### 4. 本机 Codex 路径优先
+
+当前版本优先读取：
+
+```txt
+%LOCALAPPDATA%\OpenAI\Codex\bin\<version-hash>\codex.exe
+```
+
+它不会再从 `Downloads\codex-msix-repack` 目录读取额度数据，避免旧版重打包程序造成的额度显示偏差。
+
+## 隐私与安全
+
+这个项目的安全边界很明确：
+
+- 不要求输入 Codex Token。
+- 不读取、保存、打印或上传认证 Token。
+- 不提交 `.codex` 目录、环境变量文件、日志、构建产物。
+- 额度读取依赖本机 Codex 已有登录状态。
+- 今日 Token 统计只来自本机 session 日志里的用量字段。
+- 远程仓库不包含 `dist`、`node_modules`、`.env`、`.codex`、缓存或本机用户数据。
+
+## 安装与使用
+
+### 下载运行
+
+后续可以在 Releases 页面下载 Windows 便携版 `.exe`。首次运行如果 Windows SmartScreen 提示未知发布者，是因为当前构建未做代码签名；确认来源可信后，可以选择继续运行。
+
+### 本地运行
+
+```bash
+npm install
+npm run dev
+```
+
+### 打包 exe
+
+```bash
+npm run build
+```
+
+打包完成后，Windows 便携版会输出到：
+
+```txt
+dist/Codex-Quota-Widget-0.1.0-win-x64.exe
+```
+
+## 本地开发
+
+```bash
+git clone https://github.com/1uYasha/codex-quota-widget.git
+cd codex-quota-widget
+npm install
+npm run dev
+```
+
+常用命令：
+
+| 命令 | 作用 |
+| --- | --- |
+| `npm run dev` | 启动 Electron 开发模式 |
+| `npm start` | 启动应用 |
+| `npm run build` | 打包 Windows portable exe |
+| `npm run build:dir` | 只生成 `win-unpacked` 目录 |
+
+## 项目结构
+
+```txt
+codex-quota-widget/
+├─ assets/              # 图标和 README 展示图
+├─ src/
+│  ├─ main/             # Electron 主进程、IPC、额度读取
+│  └─ renderer/         # 悬浮窗页面、样式和交互
+├─ package.json         # 项目配置与打包脚本
+├─ package-lock.json    # 依赖锁定文件
+└─ README.md
+```
+
+## 常见问题
+
+### 为什么小组件显示的额度和 Codex 内部有时不同？
+
+额度快照可能存在刷新延迟。小组件每次刷新都会重新读取本机 Codex 返回的 `usedPercent`，再换算成剩余百分比。如果 Codex 后台刚完成用量结算，刷新后可能出现 1% 左右的变化。
+
+### 为什么不再读取 repack 目录？
+
+旧的重打包目录可能对应过期 Codex 版本，返回的数据口径和当前客户端不一致。当前逻辑会优先使用本机安装目录里的 Codex 可执行文件，并过滤 `Downloads\codex-msix-repack`。
+
+### 会不会把我的 Codex Token 发到 GitHub？
+
+不会。仓库 `.gitignore` 已排除 `.env`、`.codex`、日志、缓存、构建产物和本机配置。代码中也没有读取认证 Token 的逻辑。
+
+### 支持 macOS 或 Linux 吗？
+
+当前主要面向 Windows。窗口行为、托盘、开机自启动和 Codex 路径解析都按 Windows 环境设计。
+
+## 技术栈
+
+- Electron
+- JavaScript
+- HTML / CSS
+- electron-builder
+- Codex `app-server` 本机接口
+
+## 后续计划
+
+- 增加更多紧凑布局。
+- 增加状态历史曲线。
+- 增加自定义主题色。
+- 增加 Releases 自动发布流程。
+- 增加更细粒度的错误诊断提示。
+
+## 开源协议
+
+MIT License

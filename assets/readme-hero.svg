@@ -1,0 +1,57 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="620" rx="32" fill="#0B1220"/>
+  <path d="M0 430C140 364 238 394 358 333C492 265 565 158 741 189C873 212 956 320 1200 254V620H0V430Z" fill="#132A3E"/>
+  <path d="M0 474C134 411 274 460 406 392C554 316 612 219 773 250C902 275 989 376 1200 320V620H0V474Z" fill="#153B35"/>
+  <circle cx="1010" cy="120" r="116" fill="#2DD4BF" opacity="0.12"/>
+  <circle cx="188" cy="146" r="128" fill="#38BDF8" opacity="0.13"/>
+  <g transform="translate(118 96)">
+    <rect x="0" y="0" width="486" height="428" rx="28" fill="#0F172A" stroke="#26364D" stroke-width="2"/>
+    <rect x="28" y="26" width="430" height="60" rx="16" fill="#16243A"/>
+    <circle cx="62" cy="56" r="10" fill="#22C55E"/>
+    <text x="88" y="50" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Codex Quota Widget</text>
+    <text x="88" y="73" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="14">桌面角落里的额度仪表盘</text>
+    <g transform="translate(44 124)">
+      <rect width="142" height="218" rx="28" fill="#111827" stroke="#334155"/>
+      <rect x="16" y="74" width="110" height="128" rx="24" fill="#10B981" opacity="0.45"/>
+      <path d="M18 78C46 58 74 98 126 76V202H18V78Z" fill="#34D399" opacity="0.85"/>
+      <text x="71" y="122" text-anchor="middle" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800">76%</text>
+      <text x="71" y="151" text-anchor="middle" fill="#D1FAE5" font-family="Segoe UI, Arial, sans-serif" font-size="15">剩余</text>
+    </g>
+    <g transform="translate(214 122)" font-family="Segoe UI, Arial, sans-serif">
+      <rect width="228" height="58" rx="14" fill="#123127" stroke="#1F5D48"/>
+      <text x="18" y="24" fill="#9CA3AF" font-size="15">5 小时窗口</text>
+      <text x="18" y="47" fill="#F9FAFB" font-size="20" font-weight="700">76% / 20:19</text>
+      <rect y="76" width="228" height="58" rx="14" fill="#162033" stroke="#26364D"/>
+      <text x="18" y="100" fill="#9CA3AF" font-size="15">7 天窗口</text>
+      <text x="18" y="123" fill="#F9FAFB" font-size="20" font-weight="700">71% / 7月7日</text>
+      <rect y="152" width="108" height="58" rx="14" fill="#162033" stroke="#26364D"/>
+      <text x="18" y="176" fill="#9CA3AF" font-size="15">计划</text>
+      <text x="18" y="199" fill="#F9FAFB" font-size="20" font-weight="700">PLUS</text>
+      <rect x="120" y="152" width="108" height="58" rx="14" fill="#162033" stroke="#26364D"/>
+      <text x="138" y="176" fill="#9CA3AF" font-size="15">今日 Token</text>
+      <text x="138" y="199" fill="#F9FAFB" font-size="20" font-weight="700">3.0M</text>
+    </g>
+    <g transform="translate(44 366)">
+      <circle cx="10" cy="10" r="7" fill="#22C55E"/>
+      <text x="28" y="15" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="15">已更新 16:04 · 本机读取 · 不上传 Token</text>
+    </g>
+  </g>
+  <g transform="translate(682 122)" font-family="Segoe UI, Arial, sans-serif">
+    <text x="0" y="0" fill="#E2E8F0" font-size="54" font-weight="800">Codex 额度，</text>
+    <text x="0" y="64" fill="#E2E8F0" font-size="54" font-weight="800">直接放在桌面上。</text>
+    <text x="0" y="122" fill="#A7F3D0" font-size="22">5 小时窗口 · 7 天窗口 · 今日 Token · 托盘常驻</text>
+    <g transform="translate(0 178)">
+      <rect width="138" height="46" rx="23" fill="#16A34A"/>
+      <text x="69" y="30" text-anchor="middle" fill="#FFFFFF" font-size="17" font-weight="700">绿色正常</text>
+      <rect x="154" width="138" height="46" rx="23" fill="#EAB308"/>
+      <text x="223" y="30" text-anchor="middle" fill="#111827" font-size="17" font-weight="700">黄色偏低</text>
+      <rect x="308" width="138" height="46" rx="23" fill="#EF4444"/>
+      <text x="377" y="30" text-anchor="middle" fill="#FFFFFF" font-size="17" font-weight="700">红色用尽</text>
+    </g>
+    <g transform="translate(0 270)" fill="#CBD5E1" font-size="20">
+      <text x="0" y="0">• 使用当前安装的 Codex 本机接口读取额度</text>
+      <text x="0" y="42">• 不再读取 Downloads 里的 repack 旧版本</text>
+      <text x="0" y="84">• 构建产物、缓存、Token 与本机日志默认不入库</text>
+    </g>
+  </g>
+</svg>
