@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>A compact Windows desktop widget for monitoring your local Codex quota.</strong><br />
+  <strong>A compact Windows and Apple Silicon Mac widget for monitoring your local Codex quota.</strong><br />
   It keeps the 5-hour quota, 7-day quota, and today's token usage visible in a small desktop panel.
 </p>
 
@@ -22,11 +22,11 @@
 
 ## Release Download
 
-The latest stable release is `v1.1.0`:
+The latest stable release is `v1.2.0`, with Windows and Apple Silicon Mac packages in the same GitHub Release:
 
-[Download Codex Quota Widget v1.1.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.1.0)
+[Download Codex Quota Widget v1.2.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.2.0)
 
-Download the Windows portable `.exe` from the release page and run it directly. Windows may show an unknown-publisher warning because the app is not code-signed yet.
+Download the Windows portable `.exe`, or download `mac-arm64.zip` for an Apple Silicon Mac. Both builds are currently unsigned, so the operating system may require manual approval on first launch.
 
 ## Overview
 
@@ -96,6 +96,14 @@ The output executable is generated at:
 dist/Codex-Quota-Widget-1.2.0-win-x64.exe
 ```
 
+Build the Apple Silicon Mac package on macOS:
+
+```bash
+npm run build:mac
+```
+
+The app is generated under `dist/Codex Quota Widget-darwin-arm64/`.
+
 ## Development
 
 ```bash
@@ -113,6 +121,7 @@ Useful commands:
 | `npm start` | Start the app |
 | `npm run build` | Build the Windows portable exe |
 | `npm run build:dir` | Generate the unpacked Windows app directory |
+| `npm run build:mac` | Build the Apple Silicon Mac ARM64 app |
 
 ## License
 

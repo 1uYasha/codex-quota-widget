@@ -30,6 +30,8 @@ function resolveCodexCandidates(env = process.env, platform = process.platform) 
       ]
     : [
         env.CODEX_CLI_PATH,
+        safeJoin("/Applications", "ChatGPT.app", "Contents", "Resources", "codex"),
+        safeJoin(home, "Applications", "ChatGPT.app", "Contents", "Resources", "codex"),
         safeJoin("/Applications", "Codex.app", "Contents", "Resources", "codex"),
         safeJoin(home, "Applications", "Codex.app", "Contents", "Resources", "codex"),
         safeJoin(home, ".local", "bin", "codex"),

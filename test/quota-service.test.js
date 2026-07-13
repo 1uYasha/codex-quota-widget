@@ -61,7 +61,7 @@ test("finds a global npm Codex command before the PATH fallback", () => {
       LOCALAPPDATA: path.join(root, "Local"),
       USERPROFILE: root,
       PATH: ""
-    });
+    }, "win32");
     assert.equal(candidates[0], command);
     assert.equal(candidates.at(-1), "codex");
   } finally {
@@ -77,7 +77,7 @@ test("finds a macOS Codex CLI installed in the user's local bin", () => {
 
   try {
     const candidates = resolveCodexCandidates({ HOME: root, PATH: "" }, "darwin");
-    assert.equal(candidates[0], command);
+    assert.ok(candidates.includes(command));
     assert.equal(candidates.at(-1), "codex");
   } finally {
     fs.rmSync(root, { recursive: true, force: true });

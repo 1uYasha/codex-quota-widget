@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <strong>一个面向 Windows 的 Codex 剩余额度桌面小组件。</strong><br />
+  <strong>一个面向 Windows 与 Apple Silicon Mac 的 Codex 剩余额度桌面小组件。</strong><br />
   用悬浮窗口、状态灯和液态仪表盘，把 5 小时、7 天额度与今日 Token 用量放在桌面一角。
 </p>
 
@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows-2563eb?style=for-the-badge" />
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS-2563eb?style=for-the-badge" />
   <img alt="Electron" src="https://img.shields.io/badge/Electron-43-111827?style=for-the-badge" />
   <img alt="License" src="https://img.shields.io/badge/license-MIT-16a34a?style=for-the-badge" />
 </p>
@@ -37,11 +37,11 @@ Codex Quota Widget 是一个轻量级桌面工具，用来快速查看本机 Cod
 
 ## Release 下载
 
-最新稳定版为 `v1.1.0`，可直接在 GitHub Releases 下载 Windows 便携版：
+最新稳定版为 `v1.2.0`，Windows 与 Apple Silicon Mac 包位于同一个 GitHub Release：
 
-[下载 Codex Quota Widget v1.1.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.1.0)
+[下载 Codex Quota Widget v1.2.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.2.0)
 
-下载 `.exe` 后双击运行即可。首次运行如果 Windows SmartScreen 提示未知发布者，是因为当前构建未做代码签名；确认来源可信后，可以选择继续运行。
+Windows 下载 `.exe` 后双击运行；Apple Silicon Mac 下载 `mac-arm64.zip` 后解压并打开 `.app`。两个版本均未做代码签名，系统出现安全提示时请确认来源后手动放行。
 
 ## 界面预览
 
@@ -110,6 +110,8 @@ Codex Quota Widget 是一个轻量级桌面工具，用来快速查看本机 Cod
 
 请在 [Release 下载](#release-下载) 中获取最新 Windows 便携版 `.exe`。
 
+Apple Silicon Mac（M 系列）请下载同一 Release 中的 `mac-arm64.zip`，解压后打开应用。
+
 ### 本地运行
 
 ```bash
@@ -129,6 +131,14 @@ npm run build
 dist/Codex-Quota-Widget-1.2.0-win-x64.exe
 ```
 
+### 打包 Apple Silicon Mac 版本
+
+```bash
+npm run build:mac
+```
+
+输出目录为 `dist/Codex Quota Widget-darwin-arm64/`；发布压缩包可使用 macOS 的 `ditto -c -k --sequesterRsrc --keepParent` 生成。
+
 ## 本地开发
 
 ```bash
@@ -146,6 +156,7 @@ npm run dev
 | `npm start` | 启动应用 |
 | `npm run build` | 打包 Windows portable exe |
 | `npm run build:dir` | 只生成 `win-unpacked` 目录 |
+| `npm run build:mac` | 打包 Apple Silicon Mac ARM64 应用 |
 
 ## 项目结构
 
@@ -170,9 +181,9 @@ codex-quota-widget/
 
 不会。仓库 `.gitignore` 已排除 `.env`、`.codex`、日志、缓存、构建产物和本机配置。代码中也没有读取认证 Token 的逻辑。
 
-### 支持 macOS 或 Linux 吗？
+### 支持哪些系统？
 
-当前主要面向 Windows。窗口行为、托盘、开机自启动和 Codex 路径解析都按 Windows 环境设计。
+当前提供 Windows x64 和 Apple Silicon Mac ARM64 版本。Mac 版会自动识别 `/Applications/ChatGPT.app/Contents/Resources/codex` 以及常见的本地 Codex CLI 安装路径；暂不提供 Linux 构建。
 
 ## 技术栈
 
