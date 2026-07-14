@@ -1,16 +1,17 @@
-# Codex Quota Widget
+# ChatGPT Quota
 
 <p align="center">
   中文说明 | <a href="README_EN.md">English README</a>
 </p>
 
 <p align="center">
-  <img src="assets/readme-hero.svg" alt="Codex Quota Widget 产品预览" width="880" />
+  <img src="assets/readme-hero.svg" alt="ChatGPT Quota 产品预览" width="880" />
 </p>
 
 <p align="center">
+  <img src="assets/icon.png" alt="ChatGPT Quota 猫耳图标" width="88" /><br />
   <strong>一个面向 Windows 与 Apple Silicon Mac 的 Codex 剩余额度桌面小组件。</strong><br />
-  用悬浮窗口、状态灯和液态仪表盘，把 5 小时、7 天额度与今日 Token 用量放在桌面一角。
+  Mac 菜单栏常驻百分比，Windows 托盘快速操作；悬浮窗集中显示 5 小时、7 天额度与今日 Token 用量。
 </p>
 
 <p align="center">
@@ -31,23 +32,49 @@
 
 ## 项目定位
 
-Codex Quota Widget 是一个轻量级桌面工具，用来快速查看本机 Codex 账号的使用额度状态。它不要求你手动输入 Token，也不会上传额度数据；它通过本机已安装的 Codex 程序读取官方客户端可访问的额度快照，并把信息整理成一个紧凑的悬浮窗。
+ChatGPT Quota 是一个轻量级桌面工具，用来快速查看本机 Codex 账号的使用额度状态。它不要求你手动输入 Token，也不会上传额度数据；它通过本机已安装的 Codex 程序读取官方客户端可访问的额度快照，并把信息整理成一个紧凑的悬浮窗。
 
 这个项目参考了 `xicunwus2025-sys/codex-led-widget` 的小组件方向，但做了重新开发。
 
 ## Release 下载
 
-最新稳定版为 `v1.2.0`，Windows 与 Apple Silicon Mac 包位于同一个 GitHub Release：
+最新稳定版为 `v1.3.0`，Windows 与 Apple Silicon Mac 包位于同一个 GitHub Release：
 
-[下载 Codex Quota Widget v1.2.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.2.0)
+[下载 ChatGPT Quota v1.3.0](https://github.com/1nuYasha-cck/codex-quota-widget/releases/tag/v1.3.0)
 
 Windows 下载 `.exe` 后双击运行；Apple Silicon Mac 下载 `mac-arm64.zip` 后解压并打开 `.app`。两个版本均未做代码签名，系统出现安全提示时请确认来源后手动放行。
 
 ## 界面预览
 
 <p align="center">
-  <img src="assets/readme-flow.svg" alt="Codex Quota Widget 数据流程与界面说明" width="880" />
+  <img src="assets/readme-flow.svg" alt="ChatGPT Quota 数据流程与界面说明" width="880" />
 </p>
+
+## Mac 与 Windows 特性
+
+<p align="center">
+  <img src="assets/platform-features.svg" alt="ChatGPT Quota Mac 与 Windows 特性对照" width="880" />
+</p>
+
+| 平台 | 独有体验 | 发布格式 |
+| --- | --- | --- |
+| Apple Silicon Mac | 菜单栏显示猫耳图标与剩余额度；可选择 7 天或 5 小时；点击图标打开专属设置面板；关闭悬浮窗后菜单栏继续运行 | ARM64 `.zip`，解压得到 `.app` |
+| Windows x64 | 托盘左键显示/隐藏小组件；右键打开原生设置菜单；支持置顶、开机启动和刷新间隔；免安装直接运行 | Portable `.exe` |
+
+### Mac 版
+
+- 顶部菜单栏常驻显示“猫耳图标 + 剩余额度百分比”。
+- 百分比来源可在 `7天` 与 `5小时` 之间切换并自动保存。
+- 点击菜单栏图标可进行刷新、显示/隐藏、开机启动、刷新间隔和退出设置。
+- 点击小组件关闭按钮只隐藏窗口，不退出菜单栏程序。
+- 当前提供 Apple Silicon ARM64 构建，适用于 M 系列 Mac。
+
+### Windows 版
+
+- 左键点击系统托盘图标即可显示或隐藏悬浮窗。
+- 右键托盘图标打开设置菜单，包括刷新、置顶、开机启动和刷新间隔。
+- 提供免安装 x64 便携版，不写入系统安装目录。
+- 小组件保持 `skipTaskbar`，隐藏后继续在托盘运行。
 
 小组件默认放在屏幕右上角，窗口无边框、透明背景、体积较小，不会挡住主要开发区域。颜色会跟随额度状态变化：
 
@@ -128,7 +155,7 @@ npm run build
 打包完成后，Windows 便携版会输出到：
 
 ```txt
-dist/Codex-Quota-Widget-1.2.0-win-x64.exe
+dist/ChatGPT-Quota-1.3.0-win-x64.exe
 ```
 
 ### 打包 Apple Silicon Mac 版本
@@ -137,7 +164,7 @@ dist/Codex-Quota-Widget-1.2.0-win-x64.exe
 npm run build:mac
 ```
 
-输出目录为 `dist/Codex Quota Widget-darwin-arm64/`；发布压缩包可使用 macOS 的 `ditto -c -k --sequesterRsrc --keepParent` 生成。
+输出目录为 `dist/ChatGPT Quota-darwin-arm64/`；发布压缩包可使用 macOS 的 `ditto -c -k --sequesterRsrc --keepParent` 生成。
 
 ## 本地开发
 

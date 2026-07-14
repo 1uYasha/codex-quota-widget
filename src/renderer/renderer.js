@@ -178,7 +178,7 @@ function render() {
   const level = state.loading ? elements.body.dataset.state || nextLevel : nextLevel;
 
   elements.body.dataset.state = level;
-  elements.brandName.textContent = `Codex ${t("brand")}`;
+  elements.brandName.textContent = "ChatGPT Quota";
   elements.stateText.textContent = state.error ? t("readFailed") : t("readNormal");
   elements.langBtn.textContent = state.lang === "zh" ? "English" : "\u4e2d\u6587";
   elements.settingsBtn.title = t("settings");
