@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:" />
+    <title>ChatGPT Quota</title>
+    <link rel="stylesheet" href="./menu-bar.css" />
+  </head>
+  <body>
+    <main class="popover">
+      <header class="app-header">
+        <img src="../../assets/icon.png" alt="" />
+        <div>
+          <h1>ChatGPT Quota</h1>
+          <p id="updatedText">正在读取额度…</p>
+        </div>
+      </header>
+
+      <section class="quota-summary" aria-live="polite">
+        <div class="summary-heading">
+          <span id="summaryLabel">7天剩余额度</span>
+          <strong id="summaryPercent">--%</strong>
+        </div>
+        <p><span id="fiveHourPercent">5小时 --%</span><i>·</i><span id="weeklyPercent">7天 --%</span></p>
+      </section>
+
+      <section class="action-list primary-actions">
+        <button id="toggleWidgetBtn" class="menu-row" type="button">
+          <span class="row-icon" aria-hidden="true">▣</span>
+          <span id="toggleWidgetText">显示小组件</span>
+        </button>
+        <button id="refreshBtn" class="menu-row" type="button">
+          <span class="row-icon refresh-icon" aria-hidden="true">↻</span>
+          <span>刷新额度</span>
+        </button>
+      </section>
+
+      <fieldset class="settings-group source-group">
+        <legend>菜单栏百分比</legend>
+        <label class="menu-row option-row">
+          <input type="radio" name="quotaSource" value="weekly" />
+          <span>7天</span>
+        </label>
+        <label class="menu-row option-row">
+          <input type="radio" name="quotaSource" value="fiveHour" />
+          <span>5小时</span>
+        </label>
+      </fieldset>
+
+      <section class="settings-group">
+        <label class="menu-row option-row auto-launch-row">
+          <input id="autoLaunchInput" type="checkbox" />
+          <span>开机自启动</span>
+        </label>
+        <label class="menu-row select-row">
+          <span>刷新间隔</span>
+          <select id="refreshIntervalInput" aria-label="刷新间隔">
+            <option value="1">1 分钟</option>
+            <option value="5">5 分钟</option>
+            <option value="15">15 分钟</option>
+            <option value="30">30 分钟</option>
+            <option value="60">60 分钟</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="action-list quit-group">
+        <button id="quitBtn" class="menu-row quit-row" type="button">
+          <span class="row-icon" aria-hidden="true">⏻</span>
+          <span>退出 ChatGPT Quota</span>
+        </button>
+      </section>
+    </main>
+    <script src="./menu-bar.js"></script>
+  </body>
+</html>

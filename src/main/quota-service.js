@@ -441,9 +441,9 @@ function requestRateLimitsFrom(candidate) {
       try {
         await send("initialize", {
           clientInfo: {
-            name: "codex-quota-widget",
-            title: "Codex Quota Widget",
-            version: "1.2.0"
+            name: "chatgpt-quota",
+            title: "ChatGPT Quota",
+            version: "1.3.0"
           },
           capabilities: null
         });

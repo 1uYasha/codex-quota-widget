@@ -1,0 +1,225 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+  --text: rgba(255, 255, 255, 0.94);
+  --muted: rgba(235, 240, 245, 0.58);
+  --line: rgba(255, 255, 255, 0.12);
+  --hover: rgba(255, 255, 255, 0.08);
+  --accent: #29d188;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--text);
+  user-select: none;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+.popover {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(38, 42, 47, 0.96), rgba(23, 26, 30, 0.97));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.46), inset 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 4px 13px;
+}
+
+.app-header img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 9px rgba(0, 0, 0, 0.3));
+}
+
+.app-header h1,
+.app-header p,
+.quota-summary p {
+  margin: 0;
+}
+
+.app-header h1 {
+  font-size: 18px;
+  font-weight: 680;
+  letter-spacing: -0.15px;
+}
+
+.app-header p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.quota-summary {
+  padding: 13px 14px 12px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.summary-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.summary-heading span {
+  font-size: 15px;
+  font-weight: 620;
+}
+
+.summary-heading strong {
+  color: var(--accent);
+  font-size: 27px;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.quota-summary p {
+  display: flex;
+  gap: 9px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.quota-summary i {
+  font-style: normal;
+  opacity: 0.65;
+}
+
+.action-list,
+.settings-group {
+  margin: 12px 0 0;
+  padding: 7px 0 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.settings-group legend {
+  width: 100%;
+  padding: 7px 8px 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 570;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 8px;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+button.menu-row {
+  cursor: pointer;
+}
+
+.menu-row:hover,
+.option-row:hover,
+.select-row:hover {
+  background: var(--hover);
+}
+
+.menu-row:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(41, 209, 136, 0.85);
+  outline-offset: -2px;
+}
+
+.row-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  margin-right: 7px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+.refresh-icon {
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.option-row {
+  gap: 10px;
+  cursor: pointer;
+}
+
+.option-row input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.select-row {
+  justify-content: space-between;
+}
+
+.select-row select {
+  min-width: 94px;
+  padding: 4px 24px 4px 8px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.quit-group {
+  margin-top: 8px;
+}
+
+.quit-row:hover {
+  color: #ff7d88;
+  background: rgba(255, 79, 97, 0.1);
+}
+
+body[data-refreshing="true"] #refreshBtn .refresh-icon {
+  animation: spin 0.85s linear infinite;
+}
+
+body[data-refreshing="true"] #refreshBtn {
+  color: var(--muted);
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

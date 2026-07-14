@@ -8,7 +8,7 @@
     <rect x="0" y="0" width="486" height="428" rx="28" fill="#0F172A" stroke="#26364D" stroke-width="2"/>
     <rect x="28" y="26" width="430" height="60" rx="16" fill="#16243A"/>
     <circle cx="62" cy="56" r="10" fill="#22C55E"/>
-    <text x="88" y="50" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Codex Quota Widget</text>
+    <text x="88" y="50" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">ChatGPT Quota</text>
     <text x="88" y="73" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="14">桌面角落里的额度仪表盘</text>
     <g transform="translate(44 124)">
       <rect width="142" height="218" rx="28" fill="#111827" stroke="#334155"/>
@@ -34,7 +34,7 @@
     </g>
   </g>
   <g transform="translate(682 122)" font-family="Segoe UI, Arial, sans-serif">
-    <text x="0" y="0" fill="#E2E8F0" font-size="54" font-weight="800">Codex 额度，</text>
+    <text x="0" y="0" fill="#E2E8F0" font-size="54" font-weight="800">ChatGPT Quota，</text>
     <text x="0" y="64" fill="#E2E8F0" font-size="54" font-weight="800">直接放在桌面上。</text>
     <text x="0" y="122" fill="#A7F3D0" font-size="22">5 小时 · 7 天 · 水位可选</text>
     <g transform="translate(0 178)">

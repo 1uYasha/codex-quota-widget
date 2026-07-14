@@ -1,0 +1,58 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="44" x2="1132" y2="566" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="1" stop-color="#10283A"/>
+    </linearGradient>
+    <linearGradient id="mac" x1="100" y1="125" x2="560" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#163D36"/>
+      <stop offset="1" stop-color="#102238"/>
+    </linearGradient>
+    <linearGradient id="win" x1="640" y1="125" x2="1100" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14355A"/>
+      <stop offset="1" stop-color="#111C35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" rx="30" fill="url(#bg)"/>
+  <text x="600" y="70" text-anchor="middle" fill="#F8FAFC" font-family="Segoe UI, PingFang SC, Arial, sans-serif" font-size="34" font-weight="800">一个额度核心，两种原生桌面体验</text>
+  <text x="600" y="104" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, PingFang SC, Arial, sans-serif" font-size="17">ChatGPT Quota v1.3.0 · Apple Silicon Mac + Windows x64</text>
+
+  <g font-family="Segoe UI, PingFang SC, Arial, sans-serif">
+    <rect x="70" y="130" width="500" height="400" rx="26" fill="url(#mac)" stroke="#2DD4BF" stroke-opacity="0.52"/>
+    <circle cx="120" cy="180" r="23" fill="#2DD4BF"/>
+    <path d="M108 184L108 174L114 168L120 174L126 168L132 174V184C132 191 127 196 120 196C113 196 108 191 108 184Z" fill="#FFFFFF"/>
+    <text x="158" y="183" fill="#F8FAFC" font-size="28" font-weight="800">Apple Silicon Mac</text>
+    <text x="158" y="209" fill="#99F6E4" font-size="16">顶部菜单栏原生常驻</text>
+
+    <rect x="106" y="238" width="428" height="54" rx="13" fill="#0B1624" stroke="#5EEAD4" stroke-opacity="0.36"/>
+    <circle cx="136" cy="265" r="15" fill="#2DD4BF"/>
+    <text x="164" y="272" fill="#F8FAFC" font-size="20" font-weight="700">猫耳图标</text>
+    <text x="430" y="272" fill="#5EEAD4" font-size="24" font-weight="800">76%</text>
+    <text x="485" y="271" fill="#94A3B8" font-size="15">7天</text>
+
+    <g fill="#D8E6EC" font-size="18">
+      <text x="110" y="337">✓ 隐藏悬浮窗后，百分比仍保持可见</text>
+      <text x="110" y="380">✓ 百分比来源可选 7 天或 5 小时</text>
+      <text x="110" y="423">✓ 点击菜单栏图标打开专属设置面板</text>
+      <text x="110" y="466">✓ 原生 ARM64，适用于 M 系列 Mac</text>
+    </g>
+
+    <rect x="630" y="130" width="500" height="400" rx="26" fill="url(#win)" stroke="#60A5FA" stroke-opacity="0.56"/>
+    <rect x="678" y="158" width="44" height="44" rx="10" fill="#3B82F6"/>
+    <path d="M687 169H699V181H687V169ZM702 169H714V181H702V169ZM687 184H699V196H687V184ZM702 184H714V196H702V184Z" fill="#FFFFFF"/>
+    <text x="742" y="183" fill="#F8FAFC" font-size="28" font-weight="800">Windows x64</text>
+    <text x="742" y="209" fill="#BFDBFE" font-size="16">系统托盘快捷操作</text>
+
+    <rect x="666" y="238" width="428" height="54" rx="13" fill="#0B1624" stroke="#93C5FD" stroke-opacity="0.36"/>
+    <text x="690" y="271" fill="#F8FAFC" font-size="18" font-weight="700">托盘：左键显示 / 隐藏</text>
+    <text x="956" y="271" fill="#93C5FD" font-size="16">右键设置</text>
+
+    <g fill="#D8E6EC" font-size="18">
+      <text x="670" y="337">✓ 托盘右键菜单保留完整设置入口</text>
+      <text x="670" y="380">✓ 支持置顶、开机启动和刷新间隔</text>
+      <text x="670" y="423">✓ 隐藏后不占用 Windows 任务栏</text>
+      <text x="670" y="466">✓ Portable EXE，下载后直接运行</text>
+    </g>
+  </g>
+  <text x="600" y="567" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, PingFang SC, Arial, sans-serif" font-size="15">5 小时额度 · 7 天额度 · 今日 Token · 本机读取 · 不上传认证 Token</text>
+</svg>
